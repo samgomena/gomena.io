@@ -1,20 +1,23 @@
 body {
-    transform-style: preserve-3d;
+    overflow: hidden;
 }
 
-h1 {
+h1.title {
     text-align: center font-size: 72px;
     background: -webkit-linear-gradient(to bottom, #F4D03F, #16A085);
     -webkit-background-clip: text;
-    /*-webkit-text-fill-color: transparent;*/
+    margin: 5% 0% 0% 5%; /* top and left*/
 }
 
 a {
-    transform: translateZ(20px);
     text-decoration: none;
-    text-shadow: 0px 0px 0.35px rgba(255, 255, 255, 0.9);
+    text-shadow: 0px 0px rgba(255, 255, 255, 1);
     font-family: 'Open-sans', sans-serif;
     font-size: 200%;
+}
+
+span:hover {
+    transform: translate3d(20px, 20px, 0);
 }
 
 .centered {
@@ -25,12 +28,12 @@ a {
 }
 
 .gradient {
-    /* fallback for old browsers */
+    /*fallback for old browsers */
     background: #16A085;
     /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to bottom, #F4D03F, #16A085);
+    /*background: -webkit-linear-gradient(to bottom, #F4D03F, #16A085);*/
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to bottom, #F4D03F, #16A085);
+    /*background: linear-gradient(to top, #F4D03F, #16A085);*/
     /*background: #ff6e7f;*/
     /* fallback for old browsers */
     /*background: -webkit-linear-gradient(to bottom, #bfe9ff, #ff6e7f);*/
