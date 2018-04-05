@@ -24,27 +24,28 @@
     <meta name="msapplication-TileColor" content="#2F3BA2">
     <!-- Color the status bar on mobile devices -->
     <meta name="theme-color" content="#2F3BA2">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:700">
-
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:700"> -->
+    <link rel="stylesheet" type="text/css" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 
-<body class="js-tilt gradient" data-tilt>
-    <h1 class="title">
-        <span>
-            <a href="/">Sam</a>
-        </span>
-    </h1>
-    <div class="centered border">
-        <div class='title_bar'>
-            <button class='close' href="" value="x">x</button>
-            <button class='minimize' href="">-</button>
-            <button class='maximize' href="">÷</button>
-        </div>
+<body class="gradient" data-tilt>
+    <div class="container">
         <div>
-            <h1>Placeholder.txt</h1>
+            <h5>
+                <p>
+                    <a href="/">Hi, I'm</a>
+                </p>
+            </h5>
+            <h1>
+                <p class="center-text">
+                    <a href="/">Sam</a>
+                </p>
+            </h1>
         </div>
     </div>
+<!--     <div class="centered border">
+    </div> -->
     <script src="scripts/main.js"></script>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
@@ -59,7 +60,7 @@
         a.src = g;
         m.parentNode.insertBefore(a, m)
     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-    ga('create', 'UA-XXXXX-X', 'auto');
+    ga('create', 'UA-116910223-1', 'auto');
     ga('send', 'pageview');
     </script>
 </body>
