@@ -5,15 +5,24 @@
 }  
 
 html, body, .container {
+    /*font-family: 'CircularStd-Black';*/
     height: 100%;
-    line-height: 0.15;
+    line-height: 0.001;
 }
 
 body {
     font-family: 'CircularStd-Black';
-    font-size: 500%;
+    font-size: 200%;
     overflow-x: hidden;
 }
+
+@media only screen and (min-width: 600px) {
+    body {
+        font-family: 'CircularStd-Black';
+        font-size: 400%;
+        overflow-x: hidden;
+    }
+} 
 
 p {
     text-align: center;
