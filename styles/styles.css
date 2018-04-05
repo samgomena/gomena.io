@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'CircularStd-Black';
+  src: url('CircularStd-Black.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+   url('CircularStd-Black.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}  
+
 body {
     overflow-x: hidden;
 }
@@ -12,7 +18,7 @@ h1.title {
 a {
     text-decoration: none;
     text-shadow: 0px 0px rgba(255, 255, 255, 1);
-    font-family: 'Open-sans', sans-serif;
+    font-family: 'CircularStd-Black';
     font-size: 200%;
 }
 
@@ -88,3 +94,6 @@ a {
     width: 15%;
     height: 5%
 }
+
+background-color: #2a2a72;
+background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
