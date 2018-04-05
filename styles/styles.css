@@ -32,14 +32,12 @@ a {
 }
 
 .gradient {
-    /*fallback for old browsers */
-    background-color: #2a2a72;
+/*    background-color: #2a2a72;
     background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
     -webkit-background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
     -moz-background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
     -o-background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
-    -ms-background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+    -ms-background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);*/
     -webkit-text-fill-color: transparent;
     -ms-text-fill-color: transparent;
 }
-
