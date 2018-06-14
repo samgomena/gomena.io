@@ -1891,14 +1891,14 @@ const gradient_table = {
    }
 }
 
-function randos(min=0, max=377) {
+function randos(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 (function() {
-	const rando = randos();
+	const rando = randos(0, 377);
 	const gradient_el = document.getElementById("gradient");
 
 	const entry = gradient_table[rando];
