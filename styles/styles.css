@@ -12,14 +12,14 @@ html, body, .container {
 
 body {
     font-family: 'CircularStd-Black';
-    font-size: 200%;
+    /*font-size: 200%;*/
     overflow-x: hidden;
 }
 
 @media only screen and (min-width: 600px) {
     body {
         font-family: 'CircularStd-Black';
-        font-size: 400%;
+        /*font-size: 400%;*/
         overflow-x: hidden;
     }
 } 
@@ -31,7 +31,10 @@ p {
 
 a {
     text-decoration: none;
-    text-shadow: 0px 0px rgba(255, 255, 255, 1);
+}
+
+.shadow {
+    text-shadow: 0px 0px rgba(255, 255, 255, 0.75);   
 }
 
 .container {
@@ -42,16 +45,17 @@ a {
 }
 
 .top {
-    font-size: 50%;
+    font-size: 250%;
 }
 
 .bottom {
-    font-size: 150%;
+    font-size: 650%;
     margin-top: 10%;
+    margin-bottom: 10%;
 }
 
 .info {
-    font-size: 25%;
+    font-size: 90%;
     margin-top: 10%;
     margin-left: 12.5%;
     margin-right: 12.5%;
@@ -60,11 +64,21 @@ a {
 .footer {
    position: fixed;
    left: 0;
-   bottom: 0;
+   bottom: 50px; /* 50 cuz div's inside it are all messed up otherwise*/
    width: 100%;
-   background-color: red;
    color: white;
    text-align: center;
+}
+
+.left {
+    position: absolute;
+    left: 5px;
+}
+
+.right {
+    position: absolute;
+    right: 5px;
+    cursor: pointer;
 }
 
 .gradient {
