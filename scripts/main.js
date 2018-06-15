@@ -1891,6 +1891,9 @@ const gradient_table = {
    }
 }
 
+
+const change_me = document.getElementById("change_me");
+
 function randos(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -1900,17 +1903,18 @@ function randos(min, max) {
 function init_gradient() {
  	const rando = randos(0, 377);
 	const gradient_el = document.getElementById("gradient");
+	
 
 	const entry = gradient_table[rando];
 	const name = entry['name'];
 	const rules = entry['gradient'];
 
 	gradient_el.setAttribute("style", rules);
+	change_me.setAttribute("title", "This guy's called " + name + "!");
 }
 
 (function() {
     init_gradient();
 
-    const change_me = document.getElementById("change_me");
     change_me.addEventListener('click', init_gradient);
 })();
