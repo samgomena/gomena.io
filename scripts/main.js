@@ -1910,7 +1910,7 @@ function init_gradient() {
 	const rules = entry['gradient'];
 
 	gradient_el.setAttribute("style", rules);
-	change_me.setAttribute("title", "This guy's called " + name + "!");
+	change_me.setAttribute("title", "This theme's called " + name + "!");
 }
 
 (function() {
