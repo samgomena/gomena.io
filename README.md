@@ -1,4 +1,4 @@
-# samgomena.github.io
+# [samgomena.github.io](#)
 
 jk, the website is now located [here](https://gomena.io).
 
