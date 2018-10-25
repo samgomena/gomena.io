@@ -1,8 +1,9 @@
 # samgomena.github.io
 
-All the code for a personal website of mine.
+jk, the website is now located [here](https://gomena.io).
 
-The code can be found [here](https://gomena.io)
+It was moved because github pages wouldn't allow custom domains to be served over https and that was unacceptable.
+So, using digital ocean, cloudflare, and let's encrypt we were able to get it setup properly.
 
 The background gradients are scraped and parsed via [eggradients](https://eggradients.com) and then chosen randomly.
 
