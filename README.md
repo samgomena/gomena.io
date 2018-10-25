@@ -1,6 +1,6 @@
 # [samgomena.github.io](#)
 
-While GH pages still supports it, I've opted to host the website on my personal infrastructure, which is located [here](https://gomena.io).
+While GH pages still supports it, I've opted to host the website on my personal infrastructure, which is located [here](https://sam.gomena.io).
 
 ### Why was it moved?
 
