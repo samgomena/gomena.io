@@ -11,4 +11,4 @@ So, I instead used digital ocean, cloudflare, and let's encrypt to get it set up
 ### Why does it look like that?
 The background gradients are scraped and parsed via [eggradients](https://eggradients.com) and then chosen randomly.
 
-Don't like the theme it loads? Change it by clicking '[Try a different theme?](#)' (dead link) in the bottom right corner.
+Don't like the theme it loads? Change it by clicking 'Try a different theme?' in the bottom right corner.
