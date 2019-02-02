@@ -52,7 +52,7 @@ const gradient_table = {
    10:{  
       'name':'Mars Conquest',
       'gradient':'background-color #ff4e00;\nbackground-image linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);\n',
-      'use_again':true
+      'use_again':false
    },
    11:{  
       'name':"Wozniak's Broken Heart",
@@ -587,7 +587,7 @@ const gradient_table = {
    117:{  
       'name':'Fear of Swedish',
       'gradient':'background-color #e7eff9;\nbackground-image linear-gradient(315deg, #e7eff9 0%, #cfd6e6 74%);',
-      'use_again':true
+      'use_again':false
    },
    118:{  
       'name':'Wedding Song',
@@ -1002,7 +1002,7 @@ const gradient_table = {
    200:{  
       'name':'De Laclos ',
       'gradient':'background-color: #f6f6f6;\nbackground-image: linear-gradient(315deg, #f6f6f6 0%, #e9e9e9 74%);',
-      'use_again':true
+      'use_again':false
    },
    201:{  
       'name':'Samuel Taylor ',
@@ -1072,7 +1072,7 @@ const gradient_table = {
    214:{  
       'name':'Usual Suspects',
       'gradient':'background-color #000000;\nbackground-image linear-gradient(315deg, #000000 0%, #7f8c8d 74%);',
-      'use_again':true
+      'use_again':false
    },
    215:{  
       'name':'Night Club',
@@ -1910,7 +1910,6 @@ function init_gradient() {
 
 	const gradient_el = document.getElementById("gradient");
 	
-
 	const entry = gradient_table[rando];
 	const name = entry['name'];
 	const rules = entry['gradient'];
