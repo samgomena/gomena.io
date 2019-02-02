@@ -1,12 +1,12 @@
 const gradient_table = {  
    0:{  
       'name':"Edison's broken bulb",
-      'gradient':'background-color #861657;\nbackground-image linear-gradient(326deg, #861657 0%, #ffa69e 74%);\n',
+      'gradient':'background-color: #861657;\nbackground-image: linear-gradient(326deg, #861657 0%, #ffa69e 74%);\n',
       'use_again':true
    },
    1:{  
       'name':"Schopenhauer's Joke",
-      'gradient':'background-color #bd4f6c;\nbackground-image linear-gradient(326deg, #bd4f6c 0%, #d7816a 74%);\n',
+      'gradient':'background-color: #bd4f6c;\nbackground-image: linear-gradient(326deg, #bd4f6c 0%, #d7816a 74%);\n',
       'use_again':true
    },
    2:{  
@@ -16,12 +16,12 @@ const gradient_table = {
    },
    3:{  
       'name':'Global Warming',
-      'gradient':'background-color #20bf55;\nbackground-image linear-gradient(315deg, #20bf55 0%, #01baef 74%);\n',
+      'gradient':'background-color: #20bf55;\nbackground-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);\n',
       'use_again':true
    },
    4:{  
       'name':'Successful Immigrant',
-      'gradient':'background-color #7cffcb;\nbackground-image linear-gradient(315deg, #7cffcb 0%, #74f2ce 74%);\n',
+      'gradient':'background-color: #7cffcb;\nbackground-image: linear-gradient(315deg, #7cffcb 0%, #74f2ce 74%);\n',
       'use_again':true
    },
    5:{  
@@ -51,8 +51,8 @@ const gradient_table = {
    },
    10:{  
       'name':'Mars Conquest',
-      'gradient':'background-color #ff4e00;\nbackground-image linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);\n',
-      'use_again':false
+      'gradient':'background-color: #ff4e00;\nbackground-image: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);\n',
+      'use_again':true
    },
    11:{  
       'name':"Wozniak's Broken Heart",
@@ -101,12 +101,12 @@ const gradient_table = {
    },
    20:{  
       'name':'Purchased Follower',
-      'gradient':'background-color #ebbe9b;\nbackground-image linear-gradient(315deg, #ebbe9b 0%, #e7a977 74%);',
+      'gradient':'background-color: #ebbe9b;\nbackground-image: linear-gradient(315deg, #ebbe9b 0%, #e7a977 74%);',
       'use_again':true
    },
    21:{  
       'name':'Basic Income',
-      'gradient':'background-color #ffac81;\nbackground-image linear-gradient(315deg, #ffac81 0%, #ff928b 74%);\n',
+      'gradient':'background-color: #ffac81;\nbackground-image: linear-gradient(315deg, #ffac81 0%, #ff928b 74%);\n',
       'use_again':true
    },
    22:{  
@@ -121,7 +121,7 @@ const gradient_table = {
    },
    24:{  
       'name':'Tax-free earnings',
-      'gradient':'background-color #3f0d12;\nbackground-image linear-gradient(315deg, #3f0d12 0%, #a71d31 74%);\n',
+      'gradient':'background-color: #3f0d12;\nbackground-image: linear-gradient(315deg, #3f0d12 0%, #a71d31 74%);\n',
       'use_again':true
    },
    25:{  
@@ -326,7 +326,7 @@ const gradient_table = {
    },
    65:{  
       'name':'Fury of Tayyip',
-      'gradient':'background-color #9921e8;\nbackground-image linear-gradient(315deg, #9921e8 0%, #5f72be 74%);',
+      'gradient':'background-color: #9921e8;\nbackground-image: linear-gradient(315deg, #9921e8 0%, #5f72be 74%);',
       'use_again':true
    },
    66:{  
@@ -391,7 +391,7 @@ const gradient_table = {
    },
    78:{  
       'name':'Mars Walk',
-      'gradient':'background-color #ee9617;\nbackground-image linear-gradient(315deg, #ee9617 0%, #fe5858 74%);\n',
+      'gradient':'background-color: #ee9617;\nbackground-image: linear-gradient(315deg, #ee9617 0%, #fe5858 74%);\n',
       'use_again':true
    },
    79:{  
@@ -481,7 +481,7 @@ const gradient_table = {
    },
    96:{  
       'name':'Atmospheric Pressure',
-      'gradient':'background-color #d8d8ac;\nbackground-image linear-gradient(315deg, #d8d8ac 0%, #c8c85e 74%);',
+      'gradient':'background-color: #d8d8ac;\nbackground-image: linear-gradient(315deg, #d8d8ac 0%, #c8c85e 74%);',
       'use_again':true
    },
    97:{  
@@ -566,7 +566,7 @@ const gradient_table = {
    },
    113:{  
       'name':'Lion Milk',
-      'gradient':'background-color #aee1f9;\nbackground-image linear-gradient(315deg, #aee1f9 0%, #f6ebe6 74%);\n',
+      'gradient':'background-color: #aee1f9;\nbackground-image: linear-gradient(315deg, #aee1f9 0%, #f6ebe6 74%);\n',
       'use_again':true
    },
    114:{  
@@ -586,8 +586,8 @@ const gradient_table = {
    },
    117:{  
       'name':'Fear of Swedish',
-      'gradient':'background-color #e7eff9;\nbackground-image linear-gradient(315deg, #e7eff9 0%, #cfd6e6 74%);',
-      'use_again':false
+      'gradient':'background-color: #e7eff9;\nbackground-image: linear-gradient(315deg, #e7eff9 0%, #cfd6e6 74%);',
+      'use_again':true
    },
    118:{  
       'name':'Wedding Song',
@@ -611,8 +611,8 @@ const gradient_table = {
    },
    122:{  
       'name':'Meaningful Joke',
-      'gradient':'background-color #ffd9de;\nbackground-image linear-gradient(315deg, #ffd9de 0%, #e99ba6 74%);',
-      'use_again':false
+      'gradient':'background-color: #ffd9de;\nbackground-image: linear-gradient(315deg, #ffd9de 0%, #e99ba6 74%);',
+      'use_again':true
    },
    123:{  
       'name':'Charge Cable',
@@ -1071,8 +1071,8 @@ const gradient_table = {
    },
    214:{  
       'name':'Usual Suspects',
-      'gradient':'background-color #000000;\nbackground-image linear-gradient(315deg, #000000 0%, #7f8c8d 74%);',
-      'use_again':false
+      'gradient':'background-color: #000000;\nbackground-image: linear-gradient(315deg, #000000 0%, #7f8c8d 74%);',
+      'use_again':true
    },
    215:{  
       'name':'Night Club',
@@ -1091,7 +1091,7 @@ const gradient_table = {
    },
    218:{  
       'name':'Fake Plant',
-      'gradient':'background-color #55efc4;\nbackground-image linear-gradient(315deg, #55efc4 0%, #000000 74%);',
+      'gradient':'background-color: #55efc4;\nbackground-image: linear-gradient(315deg, #55efc4 0%, #000000 74%);',
       'use_again':true
    },
    219:{  
@@ -1221,7 +1221,7 @@ const gradient_table = {
    },
    244:{  
       'name':'Yellow Rose',
-      'gradient':'background-color #d3d3d3;\nbackground-image linear-gradient(315deg, #d3d3d3 0%, #eccc68 74%);',
+      'gradient':'background-color: #d3d3d3;\nbackground-image: linear-gradient(315deg, #d3d3d3 0%, #eccc68 74%);',
       'use_again':true
    },
    245:{  
