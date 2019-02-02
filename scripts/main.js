@@ -512,7 +512,7 @@ const gradient_table = {
    102:{  
       'name':'Sign of Intelligence',
       'gradient':'background-color: #d5fefd;\nbackground-image: linear-gradient(315deg, #d5fefd 0%, #fffcff 74%);',
-      'use_again':true
+      'use_again':false
    },
    103:{  
       'name':'Hole Bag',
@@ -612,7 +612,7 @@ const gradient_table = {
    122:{  
       'name':'Meaningful Joke',
       'gradient':'background-color #ffd9de;\nbackground-image linear-gradient(315deg, #ffd9de 0%, #e99ba6 74%);',
-      'use_again':true
+      'use_again':false
    },
    123:{  
       'name':'Charge Cable',
@@ -1902,10 +1902,10 @@ function randos(min, max) {
 
 function init_gradient() {
     let rando = randos(0, 377);
-    
-    // Gradient 122 is all white
-    while (rando === 122) {
-       rando = randos(0, 377);
+
+    // Use again controls bad gradients from being shown
+    while (!gradient_table[rando].use_again) {
+        rando = randos(0, 377);
     }
 
 	const gradient_el = document.getElementById("gradient");
