@@ -1901,7 +1901,13 @@ function randos(min, max) {
 }
 
 function init_gradient() {
- 	const rando = randos(0, 377);
+    let rando = randos(0, 377);
+    
+    // Gradient 122 is all white
+    while (rando === 122) {
+       rando = randos(0, 377);
+    }
+
 	const gradient_el = document.getElementById("gradient");
 	
 
