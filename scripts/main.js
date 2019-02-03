@@ -44,13 +44,13 @@ function paint_gradient(gradient_table) {
     // Gross but works ¯\_(ツ)_/¯
     let linear_gradient;
     if(grad.length === 8) {
-        linear_gradient = `linear-gradient(${grad[1]}, ${grad[2]} ${grad[3]}, ${grad[4]} ${grad[5]}, ${grad[6]} ${grad[7]});`
+        linear_gradient = `linear-gradient(${grad[1]}, ${grad[2]} ${grad[3]}, ${grad[4]} ${grad[5]}, ${grad[6]} ${grad[7]})`
     } else {
-        linear_gradient = `linear-gradient(${grad[1]}, ${grad[2]} ${grad[3]}, ${grad[4]} ${grad[5]});`
+        linear_gradient = `linear-gradient(${grad[1]}, ${grad[2]} ${grad[3]}, ${grad[4]} ${grad[5]})`
     }
     
     let background_gradient = `background-color: ${grad[0]};
-                background-image: ${linear_gradient}`
+                                background-image: ${linear_gradient};`
 	gradient_el.setAttribute("style", background_gradient);
     change_me.setAttribute("title", "This theme's called " + name + "!");
 }
