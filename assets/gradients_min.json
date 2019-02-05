@@ -517,7 +517,7 @@
     "103": {  
        "name": "Hole Bag",
        "gradient": ["#fee2f8", "315deg", "#fee2f8", "0%", "#dcf8ef", "74%"],
-       "use_again": true
+       "use_again": false
     },
     "104": {  
        "name": "Search History",
