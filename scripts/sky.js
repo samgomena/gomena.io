@@ -7,17 +7,19 @@ class Sky {
             this.mat = this.getShader(obj.vs, obj.fs);
             let mesh = new THREE.Mesh(geom, this.mat);
             this.group.add(mesh);
-
-            // ShaderUIL.push(this.mat);
         });
+
+        // Bind `generateNewColor` to `Sky` class instead of clicked element
+        document.getElementById("change_me")
+            .addEventListener("click", this.generateNewColor.bind(this));
     }
 
     getShader(vs, fs) {
         let uniforms = {
             time: {type: 'f', value: 0},
             sat: {type: 'f', value: 0},
-            // color: {type: 'c', value: new THREE.Color(0x49BEAA)}
-            color: {type: 'c', value: new THREE.Color(0x7F3DBC)}
+            color: {type: 'c', value: new THREE.Color(0x49BEAA)}
+            // color: {type: 'c', value: new THREE.Color(0x7F3DBC)}
         };
 
         // https://threejs.org/docs/#api/en/materials/ShaderMaterial.uniforms
@@ -30,6 +32,17 @@ class Sky {
         shader.side = THREE.BackSide;
 
         return shader;
+    }
+
+    generateNewColor() {
+        console.log("This can't be happening...");
+        this.r = Utils.get_random_between(0, 256);
+        this.g = Utils.get_random_between(0, 256);
+        this.b = Utils.get_random_between(0, 256);
+        
+        // Update three material color
+        this.color = `rgb(${this.r}, ${this.g}, ${this.b})`;
+        this.mat.uniforms.color.value = new THREE.Color(this.color);
     }
 
     update() {

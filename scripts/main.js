@@ -1,3 +1,4 @@
+const change_me = document.getElementById("change_me");
 
 function webgl_support () {
    // See https://stackoverflow.com/questions/11871077/proper-way-to-detect-webgl-support
@@ -22,7 +23,11 @@ function load_for_web_gl() {
             this.renderer = new THREE.WebGLRenderer();
             this.camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 10000);
             this.camera.position.z = 4;
-            document.body.appendChild(this.renderer.domElement);
+
+            let container = document.getElementById("container");
+            document.body.insertBefore(this.renderer.domElement, container)
+            container.setAttribute("style", "z-index: 1;");
+            // document.body.appendChild(this.renderer.domElement);
             window.onresize = () => this.resize();
     
             let _this = this;
@@ -47,13 +52,11 @@ function load_for_web_gl() {
     window.onload = () => new Main();
 }
 
-const change_me = document.getElementById("change_me");
-
-function get_random_between(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+// function get_random_between(min, max) {
+//   min = Math.ceil(min);
+//   max = Math.floor(max);
+//   return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
 
 function load_gradient(gradient_data) {
     let gradient_table = JSON.parse(gradient_data);
@@ -66,11 +69,11 @@ function load_gradient(gradient_data) {
 }
 
 function paint_gradient(gradient_table) {
-    let rando = get_random_between(0, Object.keys(gradient_table).length - 1);
+    let rando = Utils.get_random_between(0, Object.keys(gradient_table).length - 1);
 
     // `use_again` limits bad gradients from being shown
     while (!gradient_table[rando].use_again) {
-        rando = get_random_between(0, 377);
+        rando = Utils.get_random_between(0, 377);
     }
 
 	const gradient_el = document.getElementById("gradient");

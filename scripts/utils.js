@@ -64,51 +64,57 @@ class Utils {
 		let newValue = (((oldValue - oldMin) * newRange) / oldRange) + newMin;
 		if (clamped) return _this.clamp(newValue, Math.min(newMin, newMax), Math.max(newMin, newMax));
 		return newValue;
-	}
-}
-
-class ShaderUIL {
-    constructor(mat) {
-        this.group = window.uil.add('group', {name: location.hash.slice(1)});
-        this.group.open();
-
-        for (var key in mat.uniforms) {
-            let obj = mat.uniforms[key];
-            switch (obj.type) {
-                case 'f': this.createNumber(obj, key); break;
-                case 'c': this.createColor(obj, key); break;
-            }
-        }
     }
-
-    createNumber(obj, key) {
-        let params = {
-            name: key,
-            type: 'html',
-            value: obj.value,
-            callback: val => {
-                obj.value = val;
-            }
-        };
-
-        this.group.add('number', params);
-    }
-
-    createColor(obj, key) {
-        let params = {
-            name: key,
-            type: 'html',
-            value: obj.value.getHex(),
-            callback: val => {
-                if (Array.isArray(val)) obj.value.setRGB(val[0], val[1], val[2]);
-                else obj.value.set(val);
-            }
-        };
-
-        this.group.add('color', params);
-    }
-
-    static push(mat) {
-        new ShaderUIL(mat);
+    
+    static get_random_between(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 }
+
+// class ShaderUIL {
+//     constructor(mat) {
+//         this.group = window.uil.add('group', {name: location.hash.slice(1)});
+//         this.group.open();
+
+//         for (var key in mat.uniforms) {
+//             let obj = mat.uniforms[key];
+//             switch (obj.type) {
+//                 case 'f': this.createNumber(obj, key); break;
+//                 case 'c': this.createColor(obj, key); break;
+//             }
+//         }
+//     }
+
+//     createNumber(obj, key) {
+//         let params = {
+//             name: key,
+//             type: 'html',
+//             value: obj.value,
+//             callback: val => {
+//                 obj.value = val;
+//             }
+//         };
+
+//         this.group.add('number', params);
+//     }
+
+//     createColor(obj, key) {
+//         let params = {
+//             name: key,
+//             type: 'html',
+//             value: obj.value.getHex(),
+//             callback: val => {
+//                 if (Array.isArray(val)) obj.value.setRGB(val[0], val[1], val[2]);
+//                 else obj.value.set(val);
+//             }
+//         };
+
+//         this.group.add('color', params);
+//     }
+
+//     static push(mat) {
+//         new ShaderUIL(mat);
+//     }
+// }
