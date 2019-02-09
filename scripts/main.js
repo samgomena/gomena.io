@@ -9,6 +9,44 @@ function webgl_support () {
     }
 }
 
+function load_for_web_gl() {
+    class Main {
+        constructor() {
+            this.initThree();
+            this.resize();
+            requestAnimationFrame(this.render.bind(this));
+        }
+    
+        initThree () {
+            this.scene = new THREE.Scene();
+            this.renderer = new THREE.WebGLRenderer();
+            this.camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 10000);
+            this.camera.position.z = 4;
+            document.body.appendChild(this.renderer.domElement);
+            window.onresize = () => this.resize();
+    
+            let _this = this;
+    
+            let view = new Sky();
+            this.scene.add(view.group);
+            this.view = view;
+        }
+    
+        resize() {
+            this.renderer.setSize(window.innerWidth, window.innerHeight);
+            this.renderer.setPixelRatio(window.devicePixelRatio);
+        }
+    
+        render() {
+            this.view.update && this.view.update();
+            this.renderer.render(this.scene, this.camera);
+            requestAnimationFrame(this.render.bind(this));
+        }
+    }
+    
+    window.onload = () => new Main();
+}
+
 const change_me = document.getElementById("change_me");
 
 function get_random_between(min, max) {
@@ -84,7 +122,7 @@ function load_for_non_web_gl() {
 (function() {
     if(webgl_support()) {
         console.log("This browser supports WebGL")
-        load_for_non_web_gl()
+        load_for_web_gl()
     } else {
         load_for_non_web_gl()
     }
