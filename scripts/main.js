@@ -91,7 +91,7 @@ function paint_gradient(gradient_table) {
     }
     
     let background_gradient = `background-color: ${grad[0]};
-                                background-image: ${linear_gradient};`
+                                background-image: ${linear_gradient};`;
 	gradient_el.setAttribute("style", background_gradient);
     change_me.setAttribute("title", "This theme's called " + name + "!");
 }
@@ -124,9 +124,10 @@ function load_for_non_web_gl() {
 
 (function() {
     if(webgl_support()) {
-        console.log("This browser supports WebGL")
-        load_for_web_gl()
+        console.log("This browser supports WebGL");
+        load_for_web_gl();
     } else {
-        load_for_non_web_gl()
+        console.log("This browser does not support WebGL");
+        load_for_non_web_gl();
     }
 })();
