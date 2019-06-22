@@ -5,9 +5,7 @@
 }  
 
 html, body, #container {
-    /*font-family: 'CircularStd-Black';*/
     height: 100%;
-    /*line-height: 0.001;*/ /* Not sure why but this muffed everything up*/
 }
 
 body {
@@ -35,14 +33,11 @@ p {
 
 a {
     text-decoration: none;
+    text-shadow: 0px 0px rgba(255, 255, 255, 1);
 }
 
 .shadow {
     text-shadow: 0px 0px rgba(255, 255, 255, 0.75);   
-}
-
-a, .shadow:hover {
-    text-shadow: 0px 0px rgba(255, 255, 255, 1);
 }
 
 .media-link {
@@ -68,7 +63,6 @@ a, .shadow:hover {
 }
 
 .info {
-    font-size: 90%;
     margin-top: 10%;
     margin-left: 12.5%;
     margin-right: 12.5%;

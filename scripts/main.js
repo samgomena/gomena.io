@@ -10,7 +10,7 @@ function webgl_support () {
     }
 }
 
-function load_for_web_gl() {
+function load_web_gl() {
     class Main {
         constructor() {
             this.initThree();
@@ -22,7 +22,7 @@ function load_for_web_gl() {
             this.scene = new THREE.Scene();
             this.renderer = new THREE.WebGLRenderer();
             this.camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 10000);
-            this.camera.position.z = 4;
+            this.camera.position.z = 10;
 
             let container = document.getElementById("container");
             document.body.insertBefore(this.renderer.domElement, container)
@@ -51,12 +51,6 @@ function load_for_web_gl() {
     
     window.onload = () => new Main();
 }
-
-// function get_random_between(min, max) {
-//   min = Math.ceil(min);
-//   max = Math.floor(max);
-//   return Math.floor(Math.random() * (max - min + 1)) + min;
-// }
 
 function load_gradient(gradient_data) {
     let gradient_table = JSON.parse(gradient_data);
@@ -96,7 +90,7 @@ function paint_gradient(gradient_table) {
     change_me.setAttribute("title", "This theme's called " + name + "!");
 }
 
-function load_for_non_web_gl() {
+function load_non_web_gl() {
     // Taken directly from the three.js docs
     var manager = new THREE.LoadingManager();
     let loader = new THREE.FileLoader(manager);
@@ -107,11 +101,6 @@ function load_for_non_web_gl() {
         
         // Load and paint gradients from `assets/gradients.json`
         load_gradient,
-        
-        // onProgress callback
-        // function ( xhr ) {
-        //     console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
-        // },
 
         // Nop for progress callback for now
         () => {},
@@ -125,9 +114,9 @@ function load_for_non_web_gl() {
 (function() {
     if(webgl_support()) {
         console.log("This browser supports WebGL");
-        load_for_web_gl();
+        load_web_gl();
     } else {
         console.log("This browser does not support WebGL");
-        load_for_non_web_gl();
+        load_non_web_gl();
     }
 })();
