@@ -4,9 +4,9 @@ While GH pages still supports the site, I've opted to host the website parallell
 
 ### Why was it moved?
 
-I moved the site because among other things, I wanted to use a custom domain and github pages doesn't allow custom domains to be served over https which was unacceptable to me.
+I moved the site because among other things, I wanted to use a custom domain and github pages doesn't allow custom domains to be served over https which was unacceptable for me.
 
-Instead, I'm using a digital ocean droplet, cloudflare, and let's encrypt for a mostly self-managing server!
+Instead, I'm using a digital ocean droplet, cloudflare, and let's encrypt for a (mostly) self-managing server!
 
 ### Why does it look like that?
 The background gradients are scraped and parsed via [eggradients](https://eggradients.com) and then chosen randomly.
