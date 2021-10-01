@@ -1,15 +1,34 @@
-# [samgomena.github.io](#)
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-While GH pages still supports the site, I've opted to host the website parallelly on my own infrastructure, which means it's now located [here](https://sam.gomena.io).
+## Getting Started
 
-### Why was it moved?
+First, run the development server:
 
-I moved the site because among other things, I wanted to use a custom domain and github pages doesn't allow custom domains to be served over https which was unacceptable for me.
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-Instead, I'm using a digital ocean droplet, cloudflare, and let's encrypt for a (mostly) self-managing server!
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### Why does it look like that?
-The background gradients are scraped and parsed via [eggradients](https://eggradients.com) and then chosen randomly.
-(Don't worry, they're scraped via a manual trigger about every 6 months).
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-Don't like the theme that's loaded? Change it by clicking `Try a different theme?` in the bottom right corner!
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
