@@ -10,6 +10,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <link rel="icon" href="/doge.ico" />
           <meta name="description" content="Sam Gomena" />
           <link
             rel="preload"
