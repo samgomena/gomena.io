@@ -27,3 +27,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+canvas {
+  position: absolute;
+}

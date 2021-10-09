@@ -12,7 +12,7 @@ const cameraSettings = {
 
 let dpr: number = undefined;
 
-export default function Scene() {
+export default function Sky() {
   // Set pixel ratio on hydartion
   useEffect(() => void (dpr = window.devicePixelRatio), []);
 
