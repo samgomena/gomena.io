@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* TODO: This don't work too good */
 /* See: https://stackoverflow.com/a/61913799/4668680 for info on how to fix it. probably. */
 @font-face {
@@ -30,4 +34,42 @@ a {
 
 canvas {
   position: absolute;
+}
+
+/* Colors from: https://tailwindcss.com/docs/customizing-colors */
+input[type="text"],
+textarea {
+  appearance: none;
+  background-color: white;
+  /* slate-300 */
+  border-color: #cbd5e1;
+  border-width: 1px;
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+input::placeholder {
+  /* slate-400 */
+  color: #94a3b8;
+}
+
+textarea::placeholder {
+  /* slate-400 */
+  color: #94a3b8;
+  opacity: 1;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  --ring-offset-shadow: 0 0 0 var(--ring-offset-width, 0)
+    var(--ring-offset-color, #fff);
+  --ring-shadow: 0 0 0 calc(1px + var(--ring-offset-width, 0px))
+    var(--ring-color, #2563eb);
+  box-shadow: var(--ring-offset-shadow), var(--ring-shadow),
+    var(--box-shadow, 0 0 #0000);
+  /* blue-600 */
+  border-color: #2563eb;
 }
