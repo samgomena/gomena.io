@@ -1,6 +1,6 @@
 .container {
+  position: relative;
   min-height: 100vh;
-  /* padding: 0 0.5rem; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,13 +17,20 @@
   align-items: center;
 }
 
+.container canvas,
+.container footer,
+.main {
+  position: absolute;
+}
+
 .footer {
   width: 100%;
   height: 100px;
-  border-top: 1px solid #eaeaea;
+  margin-top: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  bottom: 0px;
 }
 
 .footer a {
@@ -33,9 +40,13 @@
   flex-grow: 1;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.footer > p > a {
+  margin-right: 1rem;
+}
+
+.title,
+.footer {
+  color: white;
 }
 
 .title a:hover,
