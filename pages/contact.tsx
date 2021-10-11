@@ -85,7 +85,7 @@ export default function Contact() {
               <div className="mb-4">
                 <Field
                   name="email"
-                  placeholder="What's your email"
+                  placeholder="What's your email?"
                   component={Input}
                 />
                 <ErrorMessage
