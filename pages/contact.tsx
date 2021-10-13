@@ -60,69 +60,67 @@ const Input = ({ field, form: { errors }, ...props }) => {
 
 export default function Contact() {
   return (
-    <>
-      <div className="w-full max-w-xs">
-        <Formik
-          initialValues={initialValues}
-          validationSchema={validationSchema}
-          onSubmit={onSubmit}
-        >
-          {({ isSubmitting, isValid }) => (
-            <Form className="bg-white shadow-md rounded-xl px-8 pt-6 pb-8 mb-4">
-              <div className="mb-4">
-                <Field
-                  name="name"
-                  placeholder="What's your name?"
-                  component={Input}
-                />
-                <ErrorMessage
-                  name="name"
-                  component="span"
-                  className="text-red-400 italic text-sm"
-                />
-              </div>
+    <div className="w-full max-w-xs">
+      <Formik
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={onSubmit}
+      >
+        {({ isSubmitting, isValid }) => (
+          <Form className="bg-white shadow-md rounded-xl px-8 pt-6 pb-8 mb-4">
+            <div className="mb-4">
+              <Field
+                name="name"
+                placeholder="What's your name?"
+                component={Input}
+              />
+              <ErrorMessage
+                name="name"
+                component="span"
+                className="text-red-400 italic text-sm"
+              />
+            </div>
 
-              <div className="mb-4">
-                <Field
-                  name="email"
-                  placeholder="What's your email?"
-                  component={Input}
-                />
-                <ErrorMessage
-                  name="email"
-                  component="span"
-                  className="text-red-400 italic"
-                />
-              </div>
+            <div className="mb-4">
+              <Field
+                name="email"
+                placeholder="What's your email?"
+                component={Input}
+              />
+              <ErrorMessage
+                name="email"
+                component="span"
+                className="text-red-400 italic"
+              />
+            </div>
 
-              <div className="mb-4">
-                <Field
-                  name="body"
-                  as="textarea"
-                  rows={5}
-                  placeholder="Talk to me"
-                  component={Input}
-                />
-                <ErrorMessage
-                  name="body"
-                  component="span"
-                  className="text-red-400 italic"
-                />
-              </div>
+            <div className="mb-4">
+              <Field
+                name="body"
+                as="textarea"
+                rows={5}
+                placeholder="Talk to me"
+                component={Input}
+              />
+              <ErrorMessage
+                name="body"
+                component="span"
+                className="text-red-400 italic"
+              />
+            </div>
 
-              <div>
-                <button
-                  className="py-2 px-4 border border-transparent shadow-sm rounded bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50"
-                  type="submit"
-                  disabled={isSubmitting}
-                >
-                  Hit me up!
-                </button>
-              </div>
-            </Form>
-          )}
-        </Formik>
-      </div>
-    </>
+            <div>
+              <button
+                className="py-2 px-4 border border-transparent shadow-sm rounded bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50"
+                type="submit"
+                disabled={isSubmitting}
+              >
+                Hit me up!
+              </button>
+            </div>
+          </Form>
+        )}
+      </Formik>
+    </div>
   );
 }
