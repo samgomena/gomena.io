@@ -1,5 +1,8 @@
 import { ErrorMessage, Formik, Form, Field } from "formik";
+import { useState } from "react";
 import * as Yup from "yup";
+
+type SubmitStatus = "initial" | "success" | "error";
 
 type Values = {
   name: string;
@@ -16,7 +19,7 @@ const initialValues: Values = {
 const validationSchema = Yup.object().shape({
   name: Yup.string().max(
     50,
-    "Due to unforeseen circumstances your name is limited to 50 characters."
+    "Due to unforseen phenomena in the space-time continuum your name is limited to 50 characters."
   ),
   email: Yup.string()
     .email("That's not a valid email!")
@@ -26,30 +29,35 @@ const validationSchema = Yup.object().shape({
     .required("Give me something to work with!"),
 });
 
-const onSubmit = async (values, { setSubmitting }) => {
+const onSubmit = async (
+  values: Values,
+  setSubmitSuccess: (status: SubmitStatus) => void
+) => {
   const subject =
     values.name === ""
       ? `${values.email} wants to talk to you`
       : `${values.name} wants to talk to you`;
-  const res = await fetch("/api/email", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "X-Requested-With": "whatever",
-    },
-    body: JSON.stringify({ subject, ...values }),
-  });
-  const json = await res.json();
-  console.log(json);
-  setTimeout(() => {
-    console.log(JSON.stringify(values, null, 2));
-    setSubmitting(false);
-  }, 400);
+  try {
+    const res = await fetch("/api/email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Requested-With": "whatever",
+      },
+      body: JSON.stringify({ subject, ...values }),
+    });
+    const json = await res.json();
+    console.log(json);
+    setSubmitSuccess("success");
+  } catch (error) {
+    console.error(error);
+    setSubmitSuccess("error");
+  }
 };
 
-const Input = ({ field, form: { errors }, ...props }) => {
+const Input = ({ field, form: { errors, touched }, ...props }) => {
   const className = `shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-    errors[field.name] && "border-red-400"
+    touched[field.name] && errors[field.name] && "border-red-400"
   }`;
   return props.rows ? (
     <textarea className={className} {...field} {...props} />
@@ -59,15 +67,24 @@ const Input = ({ field, form: { errors }, ...props }) => {
 };
 
 export default function Contact() {
+  const [submitStatus, setSubmitStatus] = useState<SubmitStatus>("initial");
+  if (submitStatus === "success") {
+    return <SubmitSuccess setReset={() => setSubmitStatus("initial")} />;
+  }
+
   return (
     <div className="w-full max-w-xs">
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
-        onSubmit={onSubmit}
+        onSubmit={async (values) => onSubmit(values, setSubmitStatus)}
       >
         {({ isSubmitting, isValid }) => (
-          <Form className="bg-white shadow-md rounded-xl px-8 pt-6 pb-8 mb-4">
+          <Form
+            className={`bg-white shadow-md rounded-xl px-8 pt-6 pb-8 mb-4 ${
+              submitStatus === "error" ? "border-2 border-red-400" : ""
+            }`}
+          >
             <div className="mb-4">
               <Field
                 name="name"
@@ -109,13 +126,23 @@ export default function Contact() {
               />
             </div>
 
+            {submitStatus === "error" && (
+              <div className="mb-2 text-red-400">
+                Uh oh! There was an error sending your message.
+              </div>
+            )}
+
             <div>
               <button
-                className="py-2 px-4 border border-transparent shadow-sm rounded bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50"
+                className={`py-2 px-4 border border-transparent shadow-sm rounded focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 ${
+                  submitStatus === "error"
+                    ? "bg-red-500 hover:bg-red-600 focus:ring-red-400"
+                    : "bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500"
+                }`}
                 type="submit"
-                disabled={isSubmitting}
+                disabled={!isValid || isSubmitting}
               >
-                Hit me up!
+                {submitStatus === "error" ? "Try again?" : "Hit me up!"}
               </button>
             </div>
           </Form>
@@ -124,3 +151,26 @@ export default function Contact() {
     </div>
   );
 }
+
+const SubmitSuccess: React.FC<{ setReset: () => void }> = ({ setReset }) => {
+  return (
+    <div className="w-full max-w-xs">
+      <div className="bg-white shadow-md rounded-xl px-8 pt-6 pb-8 mb-4">
+        <div className="flex flex-col text-center items-center justify-center">
+          <div className="text-indigo-600 mb-2">Thanks for reaching out!</div>
+          <div className="text-indigo-400 mb-4 text-sm">
+            I&apos;ll try to get back to you as soon as possible!
+          </div>
+        </div>
+        <div className="flex items-center justify-center">
+          <button
+            onClick={setReset}
+            className="py-2 px-4 border border-transparent shadow-sm rounded bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50"
+          >
+            Do it again?
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
