@@ -12,7 +12,7 @@ const Layout: React.FC = ({ children }) => {
 
       <main className={styles.main}>{children}</main>
 
-      <footer className={styles.footer}>
+      <footer className="w-full h-24 mt-auto flex flex-col justify-center items-center bottom-0">
         <div className="flex">
           <p className="mr-2">
             <Link href="/contact">Contact.</Link>
@@ -24,7 +24,7 @@ const Layout: React.FC = ({ children }) => {
             <Link href="/about">About.</Link>
           </p>
         </div>
-        <div className="mt-3">
+        <div className="my-3">
           <p className="text-sm italic">
             <span>&copy; {currentYear}. All rights reserved.</span>
           </p>
