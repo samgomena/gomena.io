@@ -1,5 +1,4 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
@@ -13,7 +12,9 @@ export default function Home() {
         I&apos;m Sam.
       </h1>
 
-      <p className="mt-6 text-xl text-center">Welcome to my website!</p>
+      <p className="mt-6 text-xl text-center">
+        Welcome to my little corner of the internet!
+      </p>
     </div>
   );
 }
