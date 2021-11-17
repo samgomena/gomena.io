@@ -134,7 +134,7 @@ export default function Contact() {
 
             <div>
               <button
-                className={`py-2 px-4 border border-transparent shadow-sm rounded focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 ${
+                className={`py-2 px-4 border border-transparent shadow-sm rounded focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 w-full justify-center ${
                   submitStatus === "error"
                     ? "bg-red-500 hover:bg-red-600 focus:ring-red-400"
                     : "bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500"
