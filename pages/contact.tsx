@@ -47,7 +47,9 @@ const onSubmit = async (
       body: JSON.stringify({ subject, ...values }),
     });
     const json = await res.json();
-    console.log(json);
+    if (!res.ok) {
+      throw new Error(json.details);
+    }
     setSubmitSuccess("success");
   } catch (error) {
     console.error(error);
@@ -136,8 +138,8 @@ export default function Contact() {
               <button
                 className={`py-2 px-4 border border-transparent shadow-sm rounded focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 w-full justify-center ${
                   submitStatus === "error"
-                    ? "bg-red-500 hover:bg-red-600 focus:ring-red-400"
-                    : "bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500"
+                    ? "bg-red-500 hover:bg-red-600 disabled:hover:bg-red-500 focus:ring-red-400"
+                    : "bg-indigo-600 hover:bg-indigo-700 disabled:hover:bg-indigo-600 focus:ring-indigo-500"
                 }`}
                 type="submit"
                 disabled={!isValid || isSubmitting}
