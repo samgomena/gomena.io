@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-three/drei": "^7.20.5",
     "@react-three/fiber": "^7.0.19",
+    "cloudmailin": "^0.0.3",
     "formik": "^2.2.9",
     "next": "12.0.3",
     "react": "17.0.2",
