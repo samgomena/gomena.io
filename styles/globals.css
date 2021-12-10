@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* TODO: This don't work too good */
+/* See: https://stackoverflow.com/a/61913799/4668680 for info on how to fix it. probably. */
+@font-face {
+  font-family: "CircularStd-Black";
+  src: url("../public/CircularStd-Black.woff") format("woff"),
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      url("../public/CircularStd-Black.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body,
+/* Next wraps our application in a div with id="__next" */
+#__next {
+  height: 100%;
+}
+
+body {
+  font-family: "CircularStd-Black";
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
