@@ -33,7 +33,7 @@ const Layout: React.FC = ({ children }) => {
 
       <main className={styles.main}>{children}</main>
 
-      <footer className="w-full h-24 mt-auto flex flex-col justify-center items-center bottom-0">
+      <footer className="bottom-0 mt-auto flex h-24 w-full flex-col items-center justify-center">
         <div className="flex">
           <ActivePath path="/" title="Home." />
           <ActivePath path="/contact" title="Contact." />

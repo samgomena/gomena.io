@@ -83,7 +83,7 @@ export default function Contact() {
       >
         {({ isSubmitting, isValid }) => (
           <Form
-            className={`bg-white shadow-md rounded-xl px-8 pt-6 pb-8 mb-4 ${
+            className={`mb-4 rounded-xl bg-white px-8 pt-6 pb-8 shadow-md ${
               submitStatus === "error" ? "border-2 border-red-400" : ""
             }`}
           >
@@ -96,7 +96,7 @@ export default function Contact() {
               <ErrorMessage
                 name="name"
                 component="span"
-                className="text-red-400 italic text-sm"
+                className="text-sm italic text-red-400"
               />
             </div>
 
@@ -109,7 +109,7 @@ export default function Contact() {
               <ErrorMessage
                 name="email"
                 component="span"
-                className="text-red-400 italic"
+                className="italic text-red-400"
               />
             </div>
 
@@ -124,7 +124,7 @@ export default function Contact() {
               <ErrorMessage
                 name="body"
                 component="span"
-                className="text-red-400 italic"
+                className="italic text-red-400"
               />
             </div>
 
@@ -136,10 +136,10 @@ export default function Contact() {
 
             <div>
               <button
-                className={`py-2 px-4 border border-transparent shadow-sm rounded focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 w-full justify-center ${
+                className={`w-full justify-center rounded border border-transparent py-2 px-4 shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 ${
                   submitStatus === "error"
-                    ? "bg-red-500 hover:bg-red-600 disabled:hover:bg-red-500 focus:ring-red-400"
-                    : "bg-indigo-600 hover:bg-indigo-700 disabled:hover:bg-indigo-600 focus:ring-indigo-500"
+                    ? "bg-red-500 hover:bg-red-600 focus:ring-red-400 disabled:hover:bg-red-500"
+                    : "bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 disabled:hover:bg-indigo-600"
                 }`}
                 type="submit"
                 disabled={!isValid || isSubmitting}
@@ -157,17 +157,17 @@ export default function Contact() {
 const SubmitSuccess: React.FC<{ setReset: () => void }> = ({ setReset }) => {
   return (
     <div className="w-full max-w-xs">
-      <div className="bg-white shadow-md rounded-xl px-8 pt-6 pb-8 mb-4">
-        <div className="flex flex-col text-center items-center justify-center">
-          <div className="text-indigo-600 mb-2">Thanks for reaching out!</div>
-          <div className="text-indigo-400 mb-4 text-sm">
+      <div className="mb-4 rounded-xl bg-white px-8 pt-6 pb-8 shadow-md">
+        <div className="flex flex-col items-center justify-center text-center">
+          <div className="mb-2 text-indigo-600">Thanks for reaching out!</div>
+          <div className="mb-4 text-sm text-indigo-400">
             I&apos;ll try to get back to you as soon as possible!
           </div>
         </div>
         <div className="flex items-center justify-center">
           <button
             onClick={setReset}
-            className="py-2 px-4 border border-transparent shadow-sm rounded bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50"
+            className="rounded border border-transparent bg-indigo-600 py-2 px-4 shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-50"
           >
             Do it again?
           </button>
