@@ -1,7 +1,7 @@
-import { useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 
 import BackgroundScene from "./BackgroundScene";
+import useIsMounted from "../hooks/useIsMounted";
 
 const cameraSettings = {
   fov: 45,
@@ -10,15 +10,15 @@ const cameraSettings = {
   position: [0, 0, 10],
 };
 
-let dpr: number = undefined;
-
 export default function Sky() {
-  // Set pixel ratio on hydartion
-  useEffect(() => void (dpr = window.devicePixelRatio), []);
+  const hasMounted = useIsMounted();
 
   return (
-    <Canvas camera={cameraSettings} dpr={dpr}>
-      <BackgroundScene />
-    </Canvas>
+    // Ensure DOM is loaded before calculating dpr
+    hasMounted && (
+      <Canvas camera={cameraSettings} dpr={window.devicePixelRatio}>
+        <BackgroundScene />
+      </Canvas>
+    )
   );
 }
