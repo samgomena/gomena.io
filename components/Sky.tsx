@@ -15,6 +15,8 @@ export default function Sky() {
 
   return (
     // Ensure DOM is loaded before calculating dpr
+    // This will throw an error in Brave because its fingerprinting prevention logic blocks WebGL context from loading. There is no known workaround ATM.
+    // See: https://github.com/mrdoob/three.js/issues/16904#issuecomment-556386278
     hasMounted && (
       <Canvas camera={cameraSettings} dpr={window.devicePixelRatio}>
         <BackgroundScene />
