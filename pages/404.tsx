@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function FourOhFour() {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center text-center">
       <h1 className="text-4xl">This page does not exist.</h1>
       <span className="mt-2 text-sm italic">(and it probably never will)</span>
       <Link href="/">

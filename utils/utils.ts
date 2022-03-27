@@ -59,3 +59,44 @@ export function stepColor(color) {
   });
   return color.setHSL(h + 0.00015, s, l);
 }
+
+type Browser =
+  | "Opera"
+  | "Chrome"
+  | "Brave"
+  | "Safari"
+  | "Firefox"
+  | "IE"
+  | "Edge"
+  | "Unknown";
+/**
+ * Gets the name of the browser from the navigators userAgent
+ */
+export function getBrowser(): Browser {
+  const userAgent = navigator.userAgent;
+  const match = userAgent.match(/(chrome|opera|safari|firefox|msie)/i) ?? [];
+  switch (match[1]) {
+    case "Chrome":
+      // @ts-expect-error TypeScript doesn't support browser specific fields, such as this one.
+      //See: https://github.com/microsoft/TypeScript/issues/41532
+      if (navigator.brave?.isBrave().then((res: boolean) => res)) {
+        return "Brave";
+      }
+      if (userAgent.includes("Edge")) {
+        return "Edge";
+      }
+      return "Chrome";
+    case "msie":
+      return "IE";
+    case "Opera":
+    case "Safari":
+    case "Firefox":
+      return match[1] as Browser;
+    default:
+      return "Unknown";
+  }
+}
+
+export function classNames(...classes: string[]) {
+  return classes.filter(Boolean).join(" ");
+}

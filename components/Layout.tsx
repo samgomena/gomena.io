@@ -4,6 +4,7 @@ import Link from "next/link";
 import Sky from "./Sky";
 
 import styles from "../styles/Layout.module.css";
+import ErrorBoundary from "./ErrorBoundary";
 
 const currentYear = new Date().getFullYear();
 
@@ -27,29 +28,32 @@ const Layout: React.FC = ({ children }) => {
   const [extraLinksEnabled, _] = useState(
     process.env.NODE_ENV !== "production"
   );
+
   return (
     <div className={styles.container}>
-      <Sky />
+      <ErrorBoundary>
+        <Sky />
 
-      <main className={styles.main}>{children}</main>
+        <main className={styles.main}>{children}</main>
 
-      <footer className="bottom-0 mt-auto flex h-24 w-full flex-col items-center justify-center">
-        <div className="flex">
-          <ActivePath path="/" title="Home." />
-          <ActivePath path="/contact" title="Contact." />
-          {extraLinksEnabled && (
-            <>
-              <ActivePath path="/resume" title="Résumé." />
-              <ActivePath path="/about" title="About." />
-            </>
-          )}
-        </div>
-        <div className="my-2">
-          <p className="text-sm italic">
-            <span>&copy; {currentYear}. All rights reserved.</span>
-          </p>
-        </div>
-      </footer>
+        <footer className="bottom-0 mt-auto flex h-24 w-full flex-col items-center justify-center">
+          <div className="flex">
+            <ActivePath path="/" title="Home." />
+            <ActivePath path="/contact" title="Contact." />
+            {extraLinksEnabled && (
+              <>
+                <ActivePath path="/resume" title="Résumé." />
+                <ActivePath path="/about" title="About." />
+              </>
+            )}
+          </div>
+          <div className="my-2">
+            <p className="text-sm italic">
+              <span>&copy; {currentYear}. All rights reserved.</span>
+            </p>
+          </div>
+        </footer>
+      </ErrorBoundary>
     </div>
   );
 };
