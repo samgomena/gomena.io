@@ -1,3 +1,4 @@
+import React from "react";
 import { ErrorBoundary as EB } from "react-error-boundary";
 import useBrowser from "../hooks/useBrowser";
 
@@ -45,7 +46,9 @@ export function ErrorFallback({
 const errorLogger = (error: Error, info: { componentStack: string }) =>
   console.error(error, info);
 
-const ErrorBoundary: React.FC = ({ children }) => {
+const ErrorBoundary: React.FC<{ children?: React.ReactNode }> = ({
+  children,
+}) => {
   return (
     <EB FallbackComponent={ErrorFallback} onError={errorLogger}>
       {children}
