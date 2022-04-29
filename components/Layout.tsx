@@ -24,7 +24,7 @@ const ActivePath: React.FC<{ path: string; title: string }> = ({
   );
 };
 
-const Layout: React.FC = ({ children }) => {
+const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [extraLinksEnabled, _] = useState(
     process.env.NODE_ENV !== "production"
   );
