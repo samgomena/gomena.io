@@ -127,7 +127,6 @@ export default function Resume() {
   const router = useRouter();
 
   const goBack = () => {
-    console.log(document.referrer);
     if (document.referrer.includes("gomena.io")) {
       router.back();
       return;
