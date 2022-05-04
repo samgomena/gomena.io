@@ -3,7 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Sky from "./Sky";
 
-import styles from "../styles/Layout.module.css";
+import styles from "../styles/Layout.module.scss";
 import ErrorBoundary from "./ErrorBoundary";
 
 const currentYear = new Date().getFullYear();
@@ -40,12 +40,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           <div className="flex">
             <ActivePath path="/" title="Home." />
             <ActivePath path="/contact" title="Contact." />
-            {extraLinksEnabled && (
-              <>
-                <ActivePath path="/resume" title="Résumé." />
-                <ActivePath path="/about" title="About." />
-              </>
-            )}
+            <ActivePath path="/resume" title="Résumé." />
+            {extraLinksEnabled && <ActivePath path="/about" title="About." />}
           </div>
           <div className="my-2">
             <p className="text-sm italic">
