@@ -137,10 +137,10 @@ export default function Resume() {
 
   return (
     <article className="bg-gray-100 p-sm pt-4xl md:p-md lg:p-lg xl:p-xl 2xl:p-2xl">
-      <span className="group cursor-pointer md:p-0" onClick={goBack}>
+      <Link href="/">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="duration-150 ease-in-out group-hover:-translate-x-1"
+          className="mb-xl -mt-3xl cursor-pointer duration-150 ease-in-out hover:-translate-x-1 md:m-2"
           width="24"
           height="24"
           viewBox="0 0 24 24"
@@ -152,7 +152,7 @@ export default function Resume() {
         >
           <path d="M25 12H6M10 5l-7 7 7 7" />
         </svg>
-      </span>
+      </Link>
       <div className="mx-auto max-w-screen-lg rounded-md bg-white p-sm shadow-xl md:flex md:gap-md md:p-md lg:gap-lg lg:p-lg xl:p-xl 2xl:p-2xl">
         <header className="-mt-3xl md:sticky md:top-xl md:mt-0 md:w-1/3 md:self-start">
           <div className="mx-auto w-32 overflow-hidden rounded-full border-4 border-solid border-white">
