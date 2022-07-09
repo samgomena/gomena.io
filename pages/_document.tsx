@@ -26,6 +26,7 @@ class MyDocument extends Document {
             type="font/ttf"
             crossOrigin="anonymous"
           />
+          <script async defer data-website-id="d7f96a67-3894-467d-b9f2-cce03afc640b" src="https://umami-alpha-ebon.vercel.app/umami.js"></script>
         </Head>
         <body>
           <Main />
