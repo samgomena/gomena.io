@@ -21,7 +21,7 @@ const skills = [
   { skill: "Django", level: 60 },
   { skill: "Node.js", level: 60 },
   { skill: "Helm", level: 50 },
-  { skill: "Kubernetes", level: 40 },
+  { skill: "Kubernetes", level: 50 },
   { skill: "AWS", level: 40 },
   { skill: "GCP", level: 40 },
   { skill: "Docker", level: 90 },
@@ -30,6 +30,8 @@ const skills = [
   { skill: "Postgres", level: 65 },
   { skill: "MongoDB", level: 50 },
   { skill: "Kafka", level: 40 },
+  { skill: "gRPC", level: 80 },
+  { skill: "Django", level: 80 },
 ];
 
 function Skillz({ skillz }: { skillz: { skill: string; level: number }[] }) {
@@ -37,7 +39,7 @@ function Skillz({ skillz }: { skillz: { skill: string; level: number }[] }) {
   return (
     <ul className="grid-cols-2 gap-x-sm sm:grid md:grid-cols-3">
       {sortedSkillz.map(({ skill, level }, idx) => (
-        <li key={idx} className="text-slate-600">
+        <li key={skill} className="text-slate-600">
           <SkillLevel skill={skill} level={level} />
         </li>
       ))}
@@ -54,7 +56,7 @@ function SkillLevel({ skill, level }: { skill: string; level: number }) {
           <span
             style={{ width: `${level}%` }}
             className="inline-block h-2 rounded bg-gradient-to-r from-green-200 to-green-400"
-          ></span>
+          />
         </span>
       </div>
     </div>
@@ -79,13 +81,13 @@ function Employment({
   return (
     <section className="relative mb-xl pl-md md:pl-lg">
       <span className="absolute top-md bottom-sm left-0 border-l-2 border-dotted border-gray-200">
-        <span className="absolute top-0 left-0 w-2 border-t-2 border-dotted border-gray-200 md:w-3"></span>
-        <span className="absolute bottom-0 left-0 w-2 border-t-2 border-dotted border-gray-200 md:w-3"></span>
+        <span className="absolute top-0 left-0 w-2 border-t-2 border-dotted border-gray-200 md:w-3" />
+        <span className="absolute bottom-0 left-0 w-2 border-t-2 border-dotted border-gray-200 md:w-3" />
       </span>
       <span className="inline-block text-2xl font-medium text-slate-800">
         <h2>{company}</h2>
       </span>
-      <span className="mx-sm inline-block h-4 border-r-2 border-solid"></span>
+      <span className="mx-sm inline-block h-4 border-r-2 border-solid" />
       <span className="inline-block text-2xl font-light italic text-slate-700">
         <h3>{title}</h3>
       </span>
@@ -94,8 +96,8 @@ function Employment({
       </div>
       <div>
         <ul>
-          {tech.map((name, idx) => (
-            <li key={idx} className="mr-sm mb-sm inline-block">
+          {tech.map((name) => (
+            <li key={name} className="mr-sm mb-sm inline-block">
               <p className="inline-block rounded-md border border-solid border-gray-200 bg-transparent bg-gray-100 px-sm py-0.5 text-sm font-medium text-slate-500">
                 {name}
               </p>
@@ -150,6 +152,7 @@ export default function Resume() {
           strokeLinecap="round"
           strokeLinejoin="round"
         >
+          <title>Go Back</title>
           <path d="M25 12H6M10 5l-7 7 7 7" />
         </svg>
       </Link>
@@ -205,12 +208,11 @@ export default function Resume() {
             <div className="prose prose-lg">
               <h1>Who</h1>
               <p>
-                Hey! I'm Sam and I'm a software engineer who's passionate about
-                technology and the positive impact it can have on humanity. I
-                believe in writing software that is fast, sane, and
-                uncompromisingly beautiful at all levels of the stack. I'm
-                interested in working on ideas that meet these aspirations in
-                collaboration with people that share these values.
+                Hey! I'm Sam and I am a software engineer dedicated to
+                leveraging technology for positive human impact. My focus is on
+                creating efficient, robust, and elegantly designed software. I'm
+                keen to collaborate on projects that align with these principles
+                and with others who share the same commitment.
               </p>
             </div>
           </section>
@@ -219,9 +221,26 @@ export default function Resume() {
               <h1>Experience</h1>
             </div>
             <Employment
+              company="Rebellion Defense"
+              title="Software Engineer"
+              description="Automated adversary emulation at scale to detect global cyber threats"
+              tech={[
+                "React",
+                "TypeScript",
+                "Python",
+                "gRPC",
+                "envoy",
+                "Docker",
+                "K8s",
+                "AWS",
+              ]}
+              start="2023"
+              end="2024"
+            />
+            <Employment
               company="Tripwire"
               title="Software Engineer"
-              description="Building security and compliance solutions to protect the digital world."
+              description="Built security and compliance solutions to protect the digital world."
               tech={[
                 "React",
                 "TypeScript",
@@ -237,12 +256,12 @@ export default function Resume() {
                 "Jenkins",
               ]}
               start="2018"
-              end="present"
+              end="2023"
             />
             <Employment
               company="Portland State University"
-              title="Research and Development Engineer"
-              description="Researched and developed a distributed edge computing platform with a focus on facilitating machine learning as part of the Undergraduate Research and Mentorship Program."
+              title="Research Engineer"
+              description="Developed a distributed edge computing platform for machine learning in the Undergraduate Research and Mentorship Program."
               tech={[
                 "Python",
                 "JavaScript",
@@ -259,7 +278,7 @@ export default function Resume() {
             <Employment
               company="Tektronix"
               title="Software Engineering Intern"
-              description="Developed and maintained a BDD testing framework and associated infrastructure responsible for ensuring the quality of next generation oscilloscope software and hardware platforms."
+              description="Developed and maintained a behavioral testing framework and associated infrastructure responsible for ensuring the quality of next generation oscilloscope software and hardware platforms."
               tech={[
                 "Python",
                 "Jenkins",
@@ -280,10 +299,11 @@ export default function Resume() {
                 href="https://deepmarket.cs.pdx.edu/overview"
                 title="DeepMarket"
               />
-              <Project
+              {/* Maybe show this once you can clean up the repo? */}
+              {/* <Project
                 href="https://github.com/samgomena/transitcrumbs"
                 title="TransitCrumbs"
-              />
+              /> */}
               <Project
                 href="https://avantiwestlinn.com"
                 title="Avanti Restaurant & Bar"
@@ -308,11 +328,11 @@ export default function Resume() {
                 <span className="text-slate-800">
                   Portland State University
                 </span>
-                <span className="mx-sm inline-block h-4 border-r-2 border-solid"></span>
+                <span className="mx-sm inline-block h-4 border-r-2 border-solid" />
                 <span className="italic text-slate-700">
                   B.S. Computer Science
                 </span>
-                <span className="mx-sm inline-block h-4 border-r-2 border-solid"></span>
+                <span className="mx-sm inline-block h-4 border-r-2 border-solid" />
                 <span className="text-slate-600">2021</span>
               </p>
             </div>
@@ -343,6 +363,7 @@ export default function Resume() {
   );
 }
 
+// Don't show the stupid color gradient thing
 Resume.useLayout = function useLayout() {
   return false;
 };
